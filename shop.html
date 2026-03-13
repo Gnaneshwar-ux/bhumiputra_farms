@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Indhur Farms online store with turmeric products, cart, checkout, and address submission.">
+<title>Indhur Farms | Online Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#fbf4e2;--card:rgba(255,250,242,.82);--line:rgba(66,41,17,.1);--ink:#2e2012;--soft:#6f5638;--muted:#94795b;--gold:#d8921d;--gold2:#f3bd44;--forest:#3c5e28;--leaf:#709553;--danger:#b84f2a;--shadow:0 24px 60px rgba(70,43,18,.14)}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Manrope",sans-serif;color:var(--ink);background:radial-gradient(circle at 0% 0%,rgba(243,189,68,.2),transparent 24%),radial-gradient(circle at 100% 0%,rgba(112,149,83,.12),transparent 26%),linear-gradient(180deg,#fff8eb,var(--bg));overflow-x:hidden}
+  img{display:block;max-width:100%}a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}
+  .wrap{width:min(1220px,calc(100% - 28px));margin:0 auto}.card{background:var(--card);border:1px solid var(--line);border-radius:30px;box-shadow:var(--shadow);backdrop-filter:blur(12px)}.section{padding:18px 0}.kicker{margin:0 0 12px;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}.title{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(2.4rem,5vw,4.9rem);line-height:.95}.copy{margin:16px 0 0;font-size:1rem;line-height:1.82;color:var(--soft)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 20px;border:none;border-radius:999px;font-weight:800;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease}.btn:hover{transform:translateY(-2px)}.btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2e1d0d;box-shadow:0 14px 28px rgba(216,146,29,.25)}.btn.secondary{background:rgba(255,255,255,.62);border:1px solid var(--line);color:var(--forest)}.btn.ghost{background:rgba(255,255,255,.45);border:1px solid var(--line)}.pill{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(216,146,29,.12);font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
+  header{position:sticky;top:0;z-index:30;background:rgba(251,244,226,.84);backdrop-filter:blur(14px);border-bottom:1px solid rgba(66,41,17,.06)}.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}.brand{display:flex;align-items:center;gap:12px}.brand img{width:58px;height:58px;border-radius:18px;object-fit:cover;border:1px solid var(--line)}.brand strong{display:block;font-size:1rem}.brand span{display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px}.nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.nav a{padding:11px 14px;border-radius:999px;font-size:.92rem;font-weight:800;color:var(--soft)}.nav a:hover{background:rgba(216,146,29,.12)}.nav .active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2c1d0d}.nav-toggle{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:16px;background:#fff6}.nav-toggle span{display:block;width:18px;height:2px;background:var(--ink);margin:4px auto;border-radius:99px}
+  main{padding:24px 0 54px}.hero{display:grid;grid-template-columns:1.04fr .96fr;gap:20px;align-items:stretch}.hero-copy{padding:34px;position:relative;overflow:hidden}.hero-copy::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-60px;bottom:-100px;background:radial-gradient(circle,rgba(243,189,68,.18),transparent 70%)}.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(60,94,40,.08);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--forest)}.badge::before{content:"";width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--forest),var(--gold2));box-shadow:0 0 0 8px rgba(60,94,40,.08)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.hero-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.hero-note{padding:16px;border-radius:20px;background:rgba(255,255,255,.58);border:1px solid var(--line)}.hero-note strong{display:block;font-size:1.05rem;color:var(--forest)}.hero-note span{display:block;margin-top:6px;font-size:.85rem;line-height:1.65;color:var(--muted)}
+  .hero-visual{padding:18px;display:grid;grid-template-columns:1fr .98fr;gap:16px;align-items:stretch}.owner-card{position:relative;overflow:hidden;border-radius:28px;background:linear-gradient(180deg,rgba(38,22,10,.06),rgba(38,22,10,.32));min-height:100%}.owner-card img{width:100%;height:100%;object-fit:cover}.owner-glow{position:absolute;left:22px;right:22px;bottom:22px;padding:18px 20px;border-radius:22px;background:rgba(26,17,9,.66);color:#fff9ef;backdrop-filter:blur(8px);animation:floatY 4s ease-in-out infinite}.owner-glow strong{display:block;font-size:1.08rem;line-height:1.5;font-weight:700}.owner-glow span{display:block;margin-top:8px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,249,239,.72)}
+  .owner-card::after{content:"";position:absolute;top:20px;right:22px;width:74px;height:74px;border-radius:50%;background:radial-gradient(circle,rgba(243,189,68,.42),transparent 70%);animation:pulse 3.2s ease-in-out infinite}
+  .pack-stack{display:grid;gap:14px}.pack-showcase{position:relative;overflow:hidden;padding:18px;border-radius:28px;background:linear-gradient(145deg,#fbf5e7,#f4dfac);border:1px solid rgba(216,146,29,.16)}.pack-showcase.small{background:linear-gradient(145deg,#f4f8ef,#dceac8)}.pack-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px}.pack-head strong{font-size:1rem}.pack-head span{font-size:.82rem;color:var(--muted)}.pack-photo{position:relative;overflow:hidden;min-height:224px;border-radius:24px;background:#fff}.pack-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}.pack-showcase:hover .pack-photo img{transform:scale(1.04)}.pack-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(29,18,9,.48) 100%)}.pack-price{position:absolute;right:16px;bottom:16px;display:inline-flex;align-items:center;justify-content:center;min-width:74px;height:40px;padding:0 14px;border-radius:999px;background:rgba(255,248,224,.94);font-weight:800;color:#734615;box-shadow:0 12px 20px rgba(0,0,0,.12)}
+  .pouch{position:relative;width:170px;height:225px;margin:10px auto 2px;border-radius:26px 26px 30px 30px;background:linear-gradient(180deg,#fffefb,#f2bf54 42%,#da8f1d);box-shadow:0 24px 40px rgba(117,74,19,.2);transform:perspective(800px) rotateY(-14deg) rotateX(5deg);animation:tiltFloat 4.6s ease-in-out infinite}.pack-showcase.small .pouch{background:linear-gradient(180deg,#fffffc,#d9edbd 44%,#7a9f4e)}
+  .pouch::before{content:"";position:absolute;left:16px;right:16px;top:16px;height:44px;border-radius:14px;background:rgba(255,255,255,.74)}.pouch::after{content:"";position:absolute;left:24px;right:24px;bottom:24px;height:64px;border-radius:18px;background:rgba(255,255,255,.2)}
+  .seal{position:absolute;top:26px;left:50%;transform:translateX(-50%);width:46px;height:46px;border-radius:14px;overflow:hidden;border:1px solid rgba(66,41,17,.08);box-shadow:0 8px 14px rgba(0,0,0,.1)}.seal img{width:100%;height:100%;object-fit:cover}
+  .label{position:absolute;left:22px;right:22px;top:80px;text-align:center;color:#2e2012}.label b{display:block;font-size:1.15rem}.label small{display:block;margin-top:6px;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase}.price-bubble{position:absolute;right:10px;bottom:16px;display:grid;place-items:center;width:62px;height:62px;border-radius:50%;background:#fff8d7;color:#744611;font-weight:800;box-shadow:0 10px 18px rgba(0,0,0,.12)}
+  .quick-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.quick-stat{padding:16px;border-radius:20px;background:rgba(255,255,255,.58);border:1px solid var(--line)}.quick-stat strong{display:block;font-size:1.1rem;color:var(--forest)}.quick-stat span{display:block;margin-top:6px;font-size:.84rem;color:var(--muted);line-height:1.6}
+  .layout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:18px;align-items:start}.catalog{display:grid;gap:18px}.section-head{padding:28px}.products{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.product{overflow:hidden}.product-inner{padding:18px}.visual{position:relative;min-height:280px;border-radius:24px;overflow:hidden;background:linear-gradient(145deg,#f8e6ba,#f9f7ef)}.visual.roots{background:linear-gradient(145deg,#e4efd4,#fff7e5)}.visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(29,18,9,.5) 100%)}.visual img.scene{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:transform .6s ease}.product:hover .visual img.scene{transform:scale(1.04)}.visual-copy{position:absolute;left:20px;bottom:18px;right:20px;max-width:60%;padding:14px 16px;border-radius:18px;background:rgba(35,22,10,.62);color:#fff9ef;backdrop-filter:blur(8px);z-index:1}.visual-copy strong{display:block}.visual-copy span{display:block;margin-top:6px;font-size:.82rem;line-height:1.6;color:rgba(255,249,239,.8)}
+  .product h3{margin:16px 0 8px;font-size:1.28rem}.product p{margin:0;min-height:72px;font-size:.92rem;line-height:1.72;color:var(--soft)}.meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}.meta .amount{font-size:1.36rem;font-weight:800;color:var(--forest)}.meta .weight{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .cart{position:sticky;top:92px;padding:22px}.cart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.cart-head h2{margin:8px 0 0;font-size:1.4rem}.cart-count{display:grid;place-items:center;min-width:44px;height:44px;padding:0 12px;border-radius:16px;background:linear-gradient(135deg,var(--gold),var(--gold2));font-weight:800;color:#2d1d0d}.cart-items{display:grid;gap:12px;margin-top:18px}.empty{padding:18px;border-radius:20px;background:rgba(255,255,255,.56);border:1px dashed rgba(66,41,17,.16);font-size:.92rem;line-height:1.7;color:var(--soft)}.cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:14px;border-radius:18px;background:rgba(255,255,255,.58);border:1px solid var(--line)}.cart-item strong{display:block}.cart-item span{display:block;margin-top:5px;font-size:.86rem;color:var(--muted)}.cart-item-controls{display:flex;align-items:center;gap:8px}.mini-btn{display:grid;place-items:center;width:32px;height:32px;border:none;border-radius:10px;background:#fff;cursor:pointer;font-weight:800}.remove{background:rgba(184,79,42,.12);color:var(--danger)}.summary{display:grid;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}.summary-row{display:flex;justify-content:space-between;gap:12px;font-size:.92rem;color:var(--soft)}.summary-row.total{font-size:1.02rem;font-weight:800;color:var(--ink)}
+  .checkout-card{padding:28px}.checkout-grid{display:grid;grid-template-columns:1fr 320px;gap:18px}.field-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.field,.field-full{display:grid;gap:8px}.field-full{grid-column:1/-1}.field label,.field-full label{font-size:.82rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.field input,.field-full input,.field-full textarea,.field-full select{width:100%;padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:#fff;color:var(--ink)}.field-full textarea{min-height:118px;resize:vertical}
+  .order-panel{padding:20px;border-radius:24px;background:linear-gradient(180deg,rgba(60,94,40,.08),rgba(216,146,29,.08));border:1px solid rgba(60,94,40,.12)}.stepper{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.step-chip{padding:10px 12px;border-radius:999px;background:rgba(255,255,255,.66);font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.step-chip.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2f1e0e}.step-chip.done{background:rgba(60,94,40,.12);color:var(--forest)}
+  .confirm{display:none;margin-top:18px;padding:26px;border-radius:28px;background:linear-gradient(145deg,#fff7e9,#f3e3b7);border:1px solid rgba(216,146,29,.14);box-shadow:var(--shadow)}.confirm.show{display:block;animation:pop .5s ease}.confirm h3{margin:0;font-family:"Cormorant Garamond",serif;font-size:2.2rem;line-height:1}.confirm p{margin:12px 0 0;font-size:1rem;line-height:1.8;color:var(--soft)}.confirm .callout{margin-top:16px;padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.7);font-weight:700;color:var(--forest)}
+  footer{padding:10px 0 24px}.foot{padding:22px 26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.9rem;color:var(--muted)}
+  @keyframes tiltFloat{0%,100%{transform:perspective(800px) rotateY(-14deg) rotateX(5deg) translateY(0)}50%{transform:perspective(800px) rotateY(-10deg) rotateX(4deg) translateY(-8px)}}@keyframes floatY{50%{transform:translateY(-8px)}}@keyframes pulse{50%{transform:scale(1.08)}}@keyframes pop{0%{opacity:0;transform:translateY(12px) scale(.98)}100%{opacity:1;transform:none}}
+  @media (max-width:1100px){.hero,.layout,.checkout-grid{grid-template-columns:1fr}.cart{position:relative;top:0}.products{grid-template-columns:1fr 1fr}}
+  @media (max-width:860px){.nav-toggle{display:inline-block}.nav{position:absolute;left:14px;right:14px;top:76px;display:none;flex-direction:column;align-items:stretch;padding:12px;border-radius:24px;background:#fffaf3;border:1px solid var(--line);box-shadow:var(--shadow)}.nav.open{display:flex}.nav a{width:100%}.hero,.hero-visual,.products,.checkout-grid,.field-grid{grid-template-columns:1fr}.hero-copy,.cart,.section-head,.checkout-card{padding:24px}.hero-notes,.quick-stats{grid-template-columns:1fr}.owner-card{min-height:420px}}
+  @media (max-width:640px){.brand img{width:52px;height:52px}.brand strong{font-size:.95rem}.mock-pack,.pouch{width:148px;height:194px}.visual-copy{position:relative;left:auto;bottom:auto;max-width:none;margin:18px}.checkout-card,.cart,.section-head,.hero-copy{border-radius:24px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.jpeg" alt="Indhur Farms logo">
+      <div><strong>Indhur Farms</strong><span>Online store</span></div>
+    </a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="#catalog">Shop</a>
+      <a href="#checkout">Checkout</a>
+      <a href="#founder">Founder</a>
+      <a class="active" href="#catalog">Online store</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero section">
+    <div class="card hero-copy reveal">
+      <div class="badge">Online store</div>
+      <h1 class="title">Shop Indhur Farms turmeric with a smooth cart, checkout, and delivery address flow.</h1>
+      <p class="copy">Choose from pasupu podi and pasupu kommulu, add your preferred packs to cart, enter your delivery address, and place your order in just a few steps.</p>
+      <div class="actions">
+        <a class="btn primary" href="#catalog">Start shopping &rarr;</a>
+        <a class="btn secondary" href="#checkout">Go to checkout</a>
+      </div>
+      <div class="hero-notes">
+        <div class="hero-note"><strong>Real product photography</strong><span>Store cards now feature actual pasupu pack and kommulu imagery for a stronger shopping experience.</span></div>
+        <div class="hero-note"><strong>Rupee pricing</strong><span>Every card shows simple INR pricing and clear weights.</span></div>
+        <div class="hero-note"><strong>Order submission</strong><span>The flow now ends with a branded success message for the Sanjana Reddy team.</span></div>
+      </div>
+    </div>
+
+    <div class="card hero-visual reveal" id="founder">
+      <div class="owner-card">
+        <img src="assets/sanjana-reddy.jpeg" alt="Sanjana Reddy, owner of Indhur Farms">
+        <div class="owner-glow">
+          <strong>"From our village fields to your kitchen, every pack is prepared with care, pride, and purity."</strong>
+          <span>Sanjana Reddy &middot; Founder</span>
+        </div>
+      </div>
+      <div class="pack-stack">
+        <div class="pack-showcase">
+          <div class="pack-head">
+            <div><strong>Pasupu Podi</strong><span>Signature kitchen pack</span></div>
+            <div class="pill">Best seller</div>
+          </div>
+          <div class="pack-photo">
+            <img src="assets/pasupu-packet.jpg" alt="Pasupu podi product pack">
+            <div class="pack-price">&#8377;199</div>
+          </div>
+        </div>
+        <div class="pack-showcase small">
+          <div class="pack-head">
+            <div><strong>Pasupu Kommulu</strong><span>Whole root pack</span></div>
+            <div class="pill">Farm fresh</div>
+          </div>
+          <div class="pack-photo">
+            <img src="assets/pasupu-kommu.jpg" alt="Pasupu kommulu product pack">
+            <div class="pack-price">&#8377;249</div>
+          </div>
+        </div>
+      </div>
+      <div class="quick-stats" style="grid-column:1/-1;">
+        <div class="quick-stat"><strong>4 featured items</strong><span>Browse, choose quantity, and add each pack directly to cart.</span></div>
+        <div class="quick-stat"><strong>Address form</strong><span>Name, phone, street, city, state, and pincode are captured in checkout.</span></div>
+        <div class="quick-stat"><strong>Founder-led trust</strong><span>Sanjana Reddy's presence adds a personal connection to the brand.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap layout section">
+    <div class="catalog">
+      <div class="card section-head reveal" id="catalog">
+        <p class="kicker">Shop catalog</p>
+        <h2 class="title">Choose your turmeric packs.</h2>
+        <p class="copy">Browse pasupu podi and pasupu kommulu in clear pack sizes with attractive product visuals, INR pricing, and direct add-to-cart action.</p>
+      </div>
+
+      <div class="products">
+        <article class="card product reveal">
+          <div class="product-inner">
+            <div class="visual">
+              <img class="scene" src="assets/pasupu-packet.jpg" alt="Pasupu podi product pack">
+              <div class="visual-copy"><strong>Daily kitchen favorite</strong><span>Bright color, easy-to-store pouch design, and quick cooking use.</span></div>
+            </div>
+            <div class="pill" style="margin-top:16px;">Ground turmeric</div>
+            <h3>Pasupu Podi - 250g</h3>
+            <p>Signature village turmeric powder pack for everyday cooking. Smooth, bright, and designed as the main starter purchase.</p>
+            <div class="meta"><div><div class="amount">&#8377;199</div><div class="weight">250 grams</div></div><button class="btn primary add-btn" data-id="podi250">Add to cart</button></div>
+          </div>
+        </article>
+
+        <article class="card product reveal">
+          <div class="product-inner">
+            <div class="visual">
+              <img class="scene" src="assets/pasupu-packet.jpg" alt="Pasupu podi product pack">
+              <div class="visual-copy"><strong>Family-size refill</strong><span>More value for homes that cook with turmeric every day.</span></div>
+            </div>
+            <div class="pill" style="margin-top:16px;">Value pack</div>
+            <h3>Pasupu Podi - 500g</h3>
+            <p>Larger pack with a premium pouch-style visual, positioned for repeat buyers and bigger household use.</p>
+            <div class="meta"><div><div class="amount">&#8377;349</div><div class="weight">500 grams</div></div><button class="btn primary add-btn" data-id="podi500">Add to cart</button></div>
+          </div>
+        </article>
+
+        <article class="card product reveal">
+          <div class="product-inner">
+            <div class="visual roots">
+              <img class="scene" src="assets/pasupu-kommu.jpg" alt="Pasupu kommulu product pack">
+              <div class="visual-copy"><strong>Whole root goodness</strong><span>Ideal for buyers who prefer whole turmeric and traditional preparation.</span></div>
+            </div>
+            <div class="pill" style="margin-top:16px;">Whole roots</div>
+            <h3>Pasupu Kommulu - 500g</h3>
+            <p>Whole turmeric roots packed as a farm-fresh option for traditional home use, gifting, or custom grinding.</p>
+            <div class="meta"><div><div class="amount">&#8377;249</div><div class="weight">500 grams</div></div><button class="btn primary add-btn" data-id="kommulu500">Add to cart</button></div>
+          </div>
+        </article>
+
+        <article class="card product reveal">
+          <div class="product-inner">
+            <div class="visual roots">
+              <img class="scene" src="assets/pasupu-kommu.jpg" alt="Pasupu kommulu product pack">
+              <div class="visual-copy"><strong>Bulk root pack</strong><span>A stronger visual for premium buyers, gifting, or bulk kitchen stocking.</span></div>
+            </div>
+            <div class="pill" style="margin-top:16px;">Bulk pack</div>
+            <h3>Pasupu Kommulu - 1kg</h3>
+            <p>Large whole-root pack styled as the premium raw turmeric option for families, resellers, or farm-style gifting.</p>
+            <div class="meta"><div><div class="amount">&#8377;449</div><div class="weight">1 kilogram</div></div><button class="btn primary add-btn" data-id="kommulu1000">Add to cart</button></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <aside class="card cart reveal">
+      <div class="cart-head">
+        <div>
+          <div class="kicker">Cart</div>
+          <h2>Your basket</h2>
+        </div>
+        <div class="cart-count" id="cartCount">0</div>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <div class="empty">Your cart is empty. Add pasupu podi or pasupu kommulu to begin checkout.</div>
+      </div>
+      <div class="summary">
+        <div class="summary-row"><span>Subtotal</span><strong id="subtotal">&#8377;0</strong></div>
+        <div class="summary-row"><span>Delivery</span><strong id="delivery">&#8377;0</strong></div>
+        <div class="summary-row total"><span>Total</span><strong id="total">&#8377;0</strong></div>
+      </div>
+      <div class="actions" style="margin-top:18px;">
+        <a class="btn secondary" href="#catalog">Continue shopping</a>
+        <a class="btn primary" href="#checkout" id="checkoutButton">Checkout now</a>
+      </div>
+    </aside>
+  </section>
+
+  <section class="wrap section">
+    <div class="card checkout-card reveal" id="checkout">
+      <div class="stepper" id="stepper">
+        <div class="step-chip done">1 Cart</div>
+        <div class="step-chip active">2 Address</div>
+        <div class="step-chip">3 Confirmation</div>
+      </div>
+      <div class="checkout-grid">
+        <form id="checkoutForm">
+          <p class="kicker">Address page</p>
+          <h2 class="title" style="font-size:clamp(2rem,4vw,3.7rem);">Submit delivery address and place order.</h2>
+          <p class="copy">Complete your order with customer details, full delivery address, optional notes, and a clear live order summary.</p>
+          <div class="field-grid" style="margin-top:22px;">
+            <div class="field"><label for="name">Full name</label><input id="name" name="name" placeholder="Your full name" required></div>
+            <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required></div>
+            <div class="field-full"><label for="street">Street address</label><input id="street" name="street" placeholder="House no, street, landmark" required></div>
+            <div class="field"><label for="city">City / Town</label><input id="city" name="city" placeholder="Nizamabad" required></div>
+            <div class="field"><label for="state">State</label><input id="state" name="state" placeholder="Telangana" required></div>
+            <div class="field"><label for="pincode">Pincode</label><input id="pincode" name="pincode" placeholder="6 digits" required></div>
+            <div class="field"><label for="payment">Payment mode</label><select id="payment" name="payment"><option>Cash on delivery</option><option>UPI on confirmation</option><option>Bank transfer</option></select></div>
+            <div class="field-full"><label for="notes">Delivery note</label><textarea id="notes" name="notes" placeholder="Any landmarks, preferred time, or special packing request"></textarea></div>
+          </div>
+          <div class="actions" style="margin-top:20px;">
+            <button class="btn primary" type="submit">Submit order</button>
+            <button class="btn ghost" type="button" id="resetOrder">Reset form</button>
+          </div>
+        </form>
+
+        <div class="order-panel">
+          <div class="kicker">Order summary</div>
+          <div id="orderSummaryText" class="copy" style="margin-top:8px;">Add items to cart to review your order summary before submitting the address.</div>
+          <div class="summary" style="margin-top:20px;padding-top:0;border-top:none;">
+            <div class="summary-row"><span>Items</span><strong id="summaryItems">0</strong></div>
+            <div class="summary-row"><span>Subtotal</span><strong id="summarySubtotal">&#8377;0</strong></div>
+            <div class="summary-row"><span>Delivery</span><strong id="summaryDelivery">&#8377;0</strong></div>
+            <div class="summary-row total"><span>Payable total</span><strong id="summaryTotal">&#8377;0</strong></div>
+          </div>
+          <div class="copy" style="font-size:.92rem;">After submission, the customer sees a confirmation that the order has been received by the Sanjana Reddy team and will be delivered shortly.</div>
+        </div>
+      </div>
+
+      <div class="confirm" id="confirmBox">
+        <div class="pill">Order received</div>
+        <h3>Your order is received by the Sanjana Reddy team.</h3>
+        <p id="confirmMessage">Village-fresh turmeric is being prepared with care and will be delivered shortly.</p>
+        <div class="callout">Thank you for shopping with Indhur Farms. Fresh `pasupu podi` and `pasupu kommulu` will be packed beautifully and sent your way shortly.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="card foot">
+    <span>&copy; 2026 Indhur Farms online store</span>
+    <span>Order turmeric packs with doorstep delivery details in one smooth flow</span>
+    <a href="index.html">Back to home</a>
+  </div>
+</footer>
+
+<script>
+  const navToggle=document.getElementById("navToggle");
+  const nav=document.getElementById("nav");
+  navToggle.addEventListener("click",()=>{const open=nav.classList.toggle("open");navToggle.setAttribute("aria-expanded",String(open));});
+  nav.querySelectorAll("a").forEach((a)=>a.addEventListener("click",()=>{nav.classList.remove("open");navToggle.setAttribute("aria-expanded","false");}));
+
+  const products={
+    podi250:{id:"podi250",name:"Pasupu Podi - 250g",price:199,weight:"250 grams"},
+    podi500:{id:"podi500",name:"Pasupu Podi - 500g",price:349,weight:"500 grams"},
+    kommulu500:{id:"kommulu500",name:"Pasupu Kommulu - 500g",price:249,weight:"500 grams"},
+    kommulu1000:{id:"kommulu1000",name:"Pasupu Kommulu - 1kg",price:449,weight:"1 kilogram"}
+  };
+  const cart={};
+  const currency=(amount)=>"₹"+amount.toLocaleString("en-IN");
+
+  const cartCount=document.getElementById("cartCount");
+  const cartItems=document.getElementById("cartItems");
+  const subtotalEl=document.getElementById("subtotal");
+  const deliveryEl=document.getElementById("delivery");
+  const totalEl=document.getElementById("total");
+  const summaryItems=document.getElementById("summaryItems");
+  const summarySubtotal=document.getElementById("summarySubtotal");
+  const summaryDelivery=document.getElementById("summaryDelivery");
+  const summaryTotal=document.getElementById("summaryTotal");
+  const orderSummaryText=document.getElementById("orderSummaryText");
+  const checkoutButton=document.getElementById("checkoutButton");
+  const checkoutForm=document.getElementById("checkoutForm");
+  const confirmBox=document.getElementById("confirmBox");
+  const confirmMessage=document.getElementById("confirmMessage");
+  const stepper=document.getElementById("stepper");
+
+  function deliveryCharge(subtotal){
+    if(subtotal===0) return 0;
+    return subtotal>=699?0:49;
+  }
+
+  function cartTotals(){
+    let count=0;
+    let subtotal=0;
+    Object.values(cart).forEach((entry)=>{
+      count+=entry.qty;
+      subtotal+=entry.qty*entry.price;
+    });
+    const delivery=deliveryCharge(subtotal);
+    return {count,subtotal,delivery,total:subtotal+delivery};
+  }
+
+  function renderCart(){
+    const items=Object.values(cart);
+    const totals=cartTotals();
+    cartCount.textContent=String(totals.count);
+    subtotalEl.textContent=currency(totals.subtotal);
+    deliveryEl.textContent=currency(totals.delivery);
+    totalEl.textContent=currency(totals.total);
+    summaryItems.textContent=String(totals.count);
+    summarySubtotal.textContent=currency(totals.subtotal);
+    summaryDelivery.textContent=currency(totals.delivery);
+    summaryTotal.textContent=currency(totals.total);
+
+    if(!items.length){
+      cartItems.innerHTML='<div class="empty">Your cart is empty. Add pasupu podi or pasupu kommulu to begin checkout.</div>';
+      orderSummaryText.textContent="Add items to cart to review your order summary before submitting the address.";
+      return;
+    }
+
+    orderSummaryText.textContent=items.map((item)=>item.name+" x"+item.qty).join(", ");
+    cartItems.innerHTML=items.map((item)=>`
+      <div class="cart-item">
+        <div>
+          <strong>${item.name}</strong>
+          <span>${item.weight} &middot; ${currency(item.price)} each</span>
+        </div>
+        <div class="cart-item-controls">
+          <button class="mini-btn" data-action="decrease" data-id="${item.id}">-</button>
+          <strong>${item.qty}</strong>
+          <button class="mini-btn" data-action="increase" data-id="${item.id}">+</button>
+          <button class="mini-btn remove" data-action="remove" data-id="${item.id}">&times;</button>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  function addItem(id){
+    const product=products[id];
+    if(!cart[id]) cart[id]={...product,qty:0};
+    cart[id].qty+=1;
+    renderCart();
+  }
+
+  function updateItem(id,action){
+    if(!cart[id]) return;
+    if(action==="increase") cart[id].qty+=1;
+    if(action==="decrease") cart[id].qty-=1;
+    if(action==="remove" || cart[id].qty<=0) delete cart[id];
+    renderCart();
+  }
+
+  document.querySelectorAll(".add-btn").forEach((button)=>{
+    button.addEventListener("click",()=>addItem(button.dataset.id));
+  });
+
+  cartItems.addEventListener("click",(event)=>{
+    const target=event.target.closest("[data-action]");
+    if(!target) return;
+    updateItem(target.dataset.id,target.dataset.action);
+  });
+
+  checkoutButton.addEventListener("click",(event)=>{
+    if(!cartTotals().count){
+      event.preventDefault();
+      alert("Please add at least one turmeric pack before going to checkout.");
+    }
+  });
+
+  checkoutForm.addEventListener("submit",(event)=>{
+    event.preventDefault();
+    const totals=cartTotals();
+    if(!totals.count){
+      alert("Please add at least one item to the cart before submitting the order.");
+      return;
+    }
+    const formData=new FormData(checkoutForm);
+    const name=formData.get("name");
+    const city=formData.get("city");
+    const state=formData.get("state");
+    confirmMessage.textContent=`Thank you, ${name}. Your order for ${totals.count} item(s) to ${city}, ${state} is received by the Sanjana Reddy team. Village-fresh turmeric will be packed beautifully and delivered shortly.`;
+    confirmBox.classList.add("show");
+    stepper.innerHTML='<div class="step-chip done">1 Cart</div><div class="step-chip done">2 Address</div><div class="step-chip active">3 Confirmation</div>';
+    confirmBox.scrollIntoView({behavior:"smooth",block:"start"});
+    Object.keys(cart).forEach((key)=>delete cart[key]);
+    renderCart();
+    checkoutForm.reset();
+  });
+
+  document.getElementById("resetOrder").addEventListener("click",()=>{
+    checkoutForm.reset();
+    confirmBox.classList.remove("show");
+    stepper.innerHTML='<div class="step-chip done">1 Cart</div><div class="step-chip active">2 Address</div><div class="step-chip">3 Confirmation</div>';
+  });
+
+  const observer=new IntersectionObserver((entries)=>entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add("show");observer.unobserve(entry.target);}}),{threshold:.14,rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".reveal").forEach((el)=>observer.observe(el));
+  renderCart();
+</script>
+</body>
+</html>

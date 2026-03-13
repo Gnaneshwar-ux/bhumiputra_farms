@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Indhur Farms village-grown turmeric landing page with real logo usage and natural turmeric photography.">
+<title>Indhur Farms | Village-Grown Turmeric</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f8f0db;--paper:rgba(255,249,238,.85);--ink:#2d2013;--soft:#6f5438;--muted:#92775a;--gold:#d88f1f;--gold2:#f2ba40;--green:#44652c;--line:rgba(49,33,17,.1);--shadow:0 24px 50px rgba(64,40,16,.14)}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Manrope",sans-serif;color:var(--ink);background:radial-gradient(circle at top left,rgba(242,186,64,.2),transparent 28%),radial-gradient(circle at top right,rgba(68,101,44,.12),transparent 24%),linear-gradient(180deg,#fbf6ea,var(--bg));overflow-x:hidden}
+  img{display:block;max-width:100%}a{text-decoration:none;color:inherit}.wrap{width:min(1180px,calc(100% - 28px));margin:0 auto}.card{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(12px);border-radius:28px}.reveal{opacity:0;transform:translateY(26px);transition:.8s ease}.reveal.show{opacity:1;transform:none}
+  header{position:sticky;top:0;z-index:20;background:rgba(248,240,219,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(49,33,17,.06)}.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}.brand{display:flex;align-items:center;gap:12px}.brand img{width:58px;height:58px;border-radius:18px;object-fit:cover;border:1px solid var(--line)}.brand strong{display:block;font-size:1rem}.brand span{display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .nav-toggle{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:16px;background:#fff6}.nav-toggle span{display:block;width:18px;height:2px;background:var(--ink);margin:4px auto;border-radius:99px}.nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.nav a{padding:11px 14px;border-radius:999px;font-size:.92rem;font-weight:800;color:var(--soft)}.nav a:hover{background:rgba(216,143,31,.12)}.nav .pill{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2b1d0d}
+  main{padding:26px 0 56px}section{padding:18px 0}.kicker{margin:0 0 12px;font-size:.77rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}.title{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(2.25rem,5vw,4.8rem);line-height:.95}.copy{margin:16px 0 0;max-width:62ch;font-size:1rem;line-height:1.85;color:var(--soft)}
+  .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:stretch}.hero-copy{padding:36px;position:relative;overflow:hidden}.badge{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:rgba(68,101,44,.08);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}.badge::before{content:"";width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--gold2));box-shadow:0 0 0 8px rgba(68,101,44,.07)}.hero-copy p{margin:18px 0 0;line-height:1.85;color:var(--soft)}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:999px;font-weight:800}.btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#2b1d0d;box-shadow:0 14px 28px rgba(216,143,31,.25)}.btn.secondary{border:1px solid rgba(68,101,44,.15);background:#fff8;color:var(--green)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.stat{padding:16px;border-radius:20px;background:#fff8;border:1px solid var(--line)}.stat strong{display:block;font-size:1.2rem;color:var(--green)}.stat span{display:block;margin-top:6px;font-size:.86rem;line-height:1.6;color:var(--muted)}
+  .hero-media{padding:16px;display:grid;gap:14px}.hero-photo{position:relative;min-height:430px;border-radius:24px;overflow:hidden}.hero-photo img{width:100%;height:100%;object-fit:cover}.hero-note{position:absolute;left:18px;right:18px;bottom:18px;padding:16px 18px;border-radius:20px;background:rgba(28,18,9,.62);color:#fff8ef;backdrop-filter:blur(8px)}.hero-note strong{display:block;font-size:1rem}.hero-note span{display:block;margin-top:5px;font-size:.86rem;line-height:1.65;color:rgba(255,248,239,.78)}
+  .hero-bottom{display:grid;grid-template-columns:1fr .9fr;gap:14px}.logo-panel,.mini{padding:16px;border-radius:22px;background:#fff7;border:1px solid var(--line)}.logo-panel{display:flex;align-items:center;gap:14px}.logo-panel img{width:86px;height:86px;border-radius:22px;object-fit:cover}.logo-panel h2{margin:0;font-family:"Cormorant Garamond",serif;font-size:2rem;line-height:1}.logo-panel p,.mini p{margin:8px 0 0;font-size:.9rem;line-height:1.7;color:var(--soft)}.mini strong{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .split{display:grid;grid-template-columns:.96fr 1.04fr;gap:22px;align-items:center}.stack{display:grid;gap:16px}.photo{border-radius:26px;overflow:hidden;box-shadow:var(--shadow);min-height:260px}.photo.tall{min-height:470px}.photo img{width:100%;height:100%;object-fit:cover}.story{padding:34px}.points{display:grid;gap:12px;margin-top:24px}.point{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:16px;border-radius:20px;background:#fff8;border:1px solid var(--line)}.dot{width:14px;height:14px;margin-top:5px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--gold2));box-shadow:0 0 0 8px rgba(216,143,31,.08)}.point strong{display:block}.point span{display:block;margin-top:6px;font-size:.9rem;line-height:1.7;color:var(--soft)}
+  .gallery{padding:30px}.mosaic{display:grid;grid-template-columns:1.12fr .88fr;gap:16px;margin-top:22px}.gallery-card{overflow:hidden;border-radius:24px;background:#fff8;border:1px solid var(--line)}.gallery-card img{width:100%;object-fit:cover}.gallery-card.big img{height:420px}.gallery-card.small img{height:202px}.gallery-card div{padding:16px 16px 18px}.gallery-card strong{display:block}.gallery-card span{display:block;margin-top:6px;font-size:.9rem;line-height:1.7;color:var(--soft)}.caption{margin-top:16px;font-size:.86rem;line-height:1.7;color:var(--muted)}
+  .products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}.product{overflow:hidden;border-radius:26px;background:#fffaf1;border:1px solid var(--line);box-shadow:var(--shadow)}.product img{width:100%;height:236px;object-fit:cover}.product-body{padding:22px}.tag{display:inline-flex;padding:8px 12px;border-radius:999px;background:rgba(216,143,31,.12);font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}.product h3{margin:14px 0 10px;font-size:1.2rem}.product p{margin:0;min-height:82px;font-size:.93rem;line-height:1.72;color:var(--soft)}.meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:20px}.meta span{font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}.meta a{font-size:.9rem;font-weight:800}
+  .quote{margin-top:22px;padding:24px 28px}.quote p{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(1.7rem,3vw,2.7rem);line-height:1.12}.quote span{display:block;margin-top:10px;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .progress{padding:32px;background:radial-gradient(circle at left center,rgba(242,186,64,.12),transparent 36%),linear-gradient(135deg,#3f5e2a,#263718);color:#fff8ec;position:relative;overflow:hidden}.progress::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;right:-70px;bottom:-90px;background:radial-gradient(circle,rgba(255,233,188,.22),transparent 68%)}.progress-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:22px;align-items:center}.progress h2{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,4vw,3.7rem);line-height:.96}.progress p{margin:16px 0 0;line-height:1.8;color:rgba(255,248,236,.8)}.progress-links{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.progress-link{position:relative;min-height:162px;padding:20px;border-radius:22px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12)}.progress-link strong{display:block}.progress-link span{display:block;margin-top:10px;font-size:.9rem;line-height:1.72;color:rgba(255,248,236,.76)}.progress-link em{position:absolute;left:20px;bottom:18px;font-style:normal;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#ffd98b}
+  .contact{display:grid;grid-template-columns:1fr .9fr;gap:22px}.contact-info{padding:32px}.list{display:grid;gap:12px;margin-top:24px}.item{padding:16px 18px;border-radius:20px;background:#fff8;border:1px solid var(--line)}.item strong{display:block;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}.item span,.item a{display:inline-block;margin-top:8px;line-height:1.7}.contact-side{position:relative;overflow:hidden;min-height:100%;background:linear-gradient(180deg,rgba(26,18,9,.12),rgba(26,18,9,.46)),url("assets/turmeric-field.jpg") center/cover no-repeat;color:#fff8ef}.contact-side::after{content:"";position:absolute;inset:0;background:linear-gradient(150deg,rgba(216,143,31,.12),transparent 42%),linear-gradient(180deg,transparent 10%,rgba(22,15,8,.58) 100%)}.contact-side .inner{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:space-between;gap:18px;padding:32px}.contact-side h3{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(2rem,3vw,3rem);line-height:.98}.contact-side p{margin:0;max-width:30ch;line-height:1.8;color:rgba(255,248,239,.78)}.chips{display:flex;flex-wrap:wrap;gap:10px}.chips span{padding:10px 14px;border-radius:999px;background:rgba(255,248,239,.12);border:1px solid rgba(255,248,239,.14);font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  footer{padding-bottom:18px}.foot{padding:26px 28px}.foot-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:22px}.foot-top{display:flex;align-items:center;gap:14px}.foot-top img{width:72px;height:72px;border-radius:22px;object-fit:cover;border:1px solid var(--line)}.foot p{margin:14px 0 0;max-width:52ch;line-height:1.75;color:var(--soft)}.col h3{margin:0 0 12px;font-size:.84rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}.col a{display:inline-block;margin:7px 0;color:var(--soft)}.meta-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted)}
+  @media (max-width:1080px){.hero,.split,.progress-grid,.contact,.foot-grid{grid-template-columns:1fr}.products,.progress-links{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:860px){.nav-toggle{display:inline-block}.nav{position:absolute;left:14px;right:14px;top:76px;display:none;flex-direction:column;align-items:stretch;padding:12px;border-radius:24px;background:#fffaf3;border:1px solid var(--line);box-shadow:var(--shadow)}.nav.open{display:flex}.nav a{width:100%}.hero-copy,.story,.gallery,.contact-info,.foot{padding:24px}.hero-bottom,.mosaic,.products,.progress-links{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.hero-photo{min-height:360px}.photo.tall{min-height:330px}}
+  @media (max-width:640px){.brand img{width:52px;height:52px}.brand strong{font-size:.95rem}.hero-copy,.hero-media,.story,.gallery,.contact-info,.foot,.progress{border-radius:24px}.contact-side .inner{padding:24px}.meta-foot{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <img src="assets/logo.jpeg" alt="Indhur Farms logo">
+      <div><strong>Indhur Farms</strong><span>Village turmeric from Nizamabad</span></div>
+    </a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav">
+      <a href="#story">Story</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#products">Packs</a>
+      <a href="#contact">Contact</a>
+      <a class="pill" href="shop.html">Online store</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <div class="card hero-copy reveal">
+      <div class="badge">Village-grown from Nizamabad</div>
+      <h1 class="title">Pure village turmeric from Indhur Farms, brought from the fields to your kitchen.</h1>
+      <p>Discover turmeric rooted in farm care, natural color, and village-grown character. Indhur Farms brings together a strong founder story, a warm brand identity, and a direct path to shopping.</p>
+      <div class="actions">
+        <a class="btn primary" href="#products">Explore packs &rarr;</a>
+        <a class="btn secondary" href="shop.html#checkout">Ordering flow</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>Farm fresh</strong><span>Root, powder, and field visuals reflect the source behind every pack.</span></div>
+        <div class="stat"><strong>Founder-led</strong><span>The Indhur Farms identity is rooted in village trust and direct connection.</span></div>
+        <div class="stat"><strong>Easy ordering</strong><span>Customers can move from story to store and checkout in a smooth flow.</span></div>
+      </div>
+    </div>
+
+    <div class="card hero-media reveal">
+      <div class="hero-photo">
+        <img src="assets/turmeric-harvest.jpg" alt="Fresh turmeric harvest">
+        <div class="hero-note">
+          <strong>Freshly harvested turmeric from the roots up.</strong>
+          <span>Natural product imagery gives the brand a richer, more premium presence.</span>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <div class="logo-panel">
+          <img src="assets/logo.jpeg" alt="Indhur Farms logo tile">
+          <div>
+            <h2>Rooted in village character.</h2>
+            <p>Indhur Farms brings together traditional farm values, natural turmeric quality, and a strong visual identity.</p>
+          </div>
+        </div>
+        <div class="mini">
+          <strong>Farm to home</strong>
+          <p>Explore the story, browse the store, and order turmeric packs directly with a clean shopping flow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="wrap split">
+    <div class="stack reveal">
+      <div class="photo tall"><img src="assets/turmeric-field.jpg" alt="Turmeric field"></div>
+      <div class="photo"><img src="assets/turmeric-roots.jpg" alt="Turmeric root close-up"></div>
+    </div>
+    <div class="card story reveal">
+      <p class="kicker">Farm story</p>
+      <h2 class="title">A brand story that feels closer to the soil.</h2>
+      <p class="copy">Indhur Farms is built around village-grown turmeric, natural product quality, and a founder-led connection to the land. Every section of the website reflects that sense of origin and care.</p>
+      <div class="points">
+        <div class="point"><div class="dot"></div><div><strong>Village-rooted identity</strong><span>The branding reflects the farm, the founder, and the natural warmth of the product itself.</span></div></div>
+        <div class="point"><div class="dot"></div><div><strong>Natural turmeric context</strong><span>Roots, powder, and field images keep the story tangible and connected to the source.</span></div></div>
+        <div class="point"><div class="dot"></div><div><strong>Direct shopping path</strong><span>Customers can discover the brand and move straight into browsing, enquiry, and checkout.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="wrap">
+    <div class="card gallery reveal">
+      <p class="kicker">Farm and product imagery</p>
+      <h2 class="title">From root to powder, the product story stays visible.</h2>
+      <p class="copy">Natural turmeric visuals strengthen the Indhur Farms identity by connecting the brand to the crop, the field, and the kitchen-ready product.</p>
+      <div class="mosaic">
+        <article class="gallery-card big">
+          <img src="assets/turmeric-powder.jpg" alt="Turmeric powder on a table">
+          <div><strong>Powder texture and color</strong><span>Rich color and texture help showcase the warmth and quality of the turmeric.</span></div>
+        </article>
+        <div class="stack">
+          <article class="gallery-card small">
+            <img src="assets/turmeric-roots.jpg" alt="Sliced turmeric root">
+            <div><strong>Fresh-cut root detail</strong><span>Shows the natural ingredient story before grinding, packing, and delivery.</span></div>
+          </article>
+          <article class="gallery-card small">
+            <img src="assets/turmeric-harvest.jpg" alt="Turmeric roots after harvest">
+            <div><strong>Harvest reference</strong><span>Connects the brand directly to real farm-grown turmeric.</span></div>
+          </article>
+        </div>
+      </div>
+      <div class="caption">The photo treatment gives the website a more natural, premium, and product-led character.</div>
+    </div>
+  </section>
+
+  <section id="products" class="wrap">
+    <p class="kicker">Featured packs</p>
+    <h2 class="title">Three clear entry points for the catalog.</h2>
+    <p class="copy">Explore the product range through a simple, visual introduction before moving into the full shopping experience.</p>
+    <div class="products">
+      <article class="product reveal">
+        <img src="assets/turmeric-powder.jpg" alt="Turmeric powder product visual">
+        <div class="product-body">
+          <span class="tag">Kitchen staple</span>
+          <h3>Daily cooking turmeric</h3>
+          <p>A clean everyday pack for household cooking, positioned as the main entry-level product.</p>
+          <div class="meta"><span>100g to 500g</span><a href="shop.html#catalog">See details &rarr;</a></div>
+        </div>
+      </article>
+      <article class="product reveal">
+        <img src="assets/turmeric-harvest.jpg" alt="Fresh harvest product visual">
+        <div class="product-body">
+          <span class="tag">Farm story</span>
+          <h3>Source-first turmeric</h3>
+          <p>Best suited for showing direct-from-farm positioning, small-batch packing, and freshness.</p>
+          <div class="meta"><span>Fresh batch focus</span><a href="shop.html#catalog">See details &rarr;</a></div>
+        </div>
+      </article>
+      <article class="product reveal">
+        <img src="assets/turmeric-roots.jpg" alt="Premium turmeric roots visual">
+        <div class="product-body">
+          <span class="tag">Premium line</span>
+          <h3>Curated root-to-powder range</h3>
+          <p>A flexible card for premium variants or a specialty range once pricing and catalog details are ready.</p>
+          <div class="meta"><span>Special release</span><a href="shop.html#catalog">See details &rarr;</a></div>
+        </div>
+      </article>
+    </div>
+    <div class="card quote reveal">
+      <p>"Pure turmeric, village values, and a story you can feel in every pack."</p>
+      <span>Indhur Farms</span>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="card progress reveal">
+      <div class="progress-grid">
+        <div>
+          <p class="kicker" style="color:#ffd98b">Build status</p>
+          <h2>Rooted quality, clear trust, and direct access to the store.</h2>
+          <p>The website now highlights the essentials that matter most: founder-led trust, natural product storytelling, and a direct path into the online store and checkout flow.</p>
+        </div>
+        <div class="progress-links">
+          <a class="progress-link" href="shop.html"><strong>Online store</strong><span>Browse turmeric packs, add products to cart, and move straight to checkout.</span><em>Shop now</em></a>
+          <a class="progress-link" href="#story"><strong>Farm story</strong><span>Discover the village roots, the founder story, and the farm-led brand identity.</span><em>Read more</em></a>
+          <a class="progress-link" href="#contact"><strong>Contact the farm</strong><span>Reach out directly for product questions, bulk orders, or buying support.</span><em>Get in touch</em></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="wrap contact">
+    <div class="card contact-info reveal">
+      <p class="kicker">Get in touch</p>
+      <h2 class="title">Discover the brand, then move directly into shopping or enquiry.</h2>
+      <p class="copy">Visitors can explore the farm story, browse the turmeric range, and reach the team directly for product questions, orders, and bulk requirements.</p>
+      <div class="list">
+        <div class="item"><strong>Phone / WhatsApp</strong><a href="https://wa.me/919876543210">+91 98765 43210</a></div>
+        <div class="item"><strong>Email</strong><a href="mailto:contact@indhurfarms.com">contact@indhurfarms.com</a></div>
+        <div class="item"><strong>Location</strong><span>Chintalur Village, Jukkal Mandal, Nizamabad, Telangana</span></div>
+        <div class="item"><strong>Bulk enquiry</strong><a href="https://wa.me/919876543210?text=Hello%20Indhur%20Farms%2C%20I%20would%20like%20to%20enquire%20about%20bulk%20orders.">Start bulk order enquiry</a></div>
+      </div>
+    </div>
+    <div class="card contact-side reveal">
+      <div class="inner">
+        <div>
+          <p class="kicker" style="color:#ffd98b">Farm to home</p>
+          <h3>Village-grown turmeric with a clear story and a direct buying path.</h3>
+          <p>From the visual identity to the new shopping flow, the site now presents Indhur Farms as a confident, founder-led turmeric brand.</p>
+        </div>
+        <div class="chips"><span>Logo integrated</span><span>Photo-backed layout</span><span>Direct store access</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="card foot reveal">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-top">
+          <img src="assets/logo.jpeg" alt="Indhur Farms footer logo">
+          <div><strong>Indhur Farms</strong><div style="margin-top:4px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">Village turmeric identity</div></div>
+        </div>
+        <p>A warmer landing page for the brand, using your actual logo, natural turmeric photography, and a direct path to the online store.</p>
+      </div>
+      <div class="col">
+        <h3>Explore</h3>
+        <a href="#story">Farm story</a><br>
+        <a href="#gallery">Natural gallery</a><br>
+        <a href="#products">Featured packs</a><br>
+        <a href="shop.html">Online store</a>
+      </div>
+      <div class="col">
+        <h3>More</h3>
+        <a href="#contact">Contact</a><br>
+        <a href="#gallery">Gallery</a><br>
+        <a href="#story">Founder story</a><br>
+        <a href="shop.html#checkout">Checkout</a>
+      </div>
+    </div>
+    <div class="meta-foot"><span>&copy; 2026 Indhur Farms</span><span>Village turmeric from Nizamabad</span><span>Nizamabad, Telangana</span></div>
+  </div>
+</footer>
+
+<script>
+  const toggle=document.getElementById("navToggle");
+  const nav=document.getElementById("nav");
+  toggle.addEventListener("click",()=>{const open=nav.classList.toggle("open");toggle.setAttribute("aria-expanded",String(open));});
+  nav.querySelectorAll("a").forEach((a)=>a.addEventListener("click",()=>{nav.classList.remove("open");toggle.setAttribute("aria-expanded","false");}));
+  const io=new IntersectionObserver((entries)=>entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add("show");io.unobserve(entry.target);}}),{threshold:.16,rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".reveal").forEach((el)=>io.observe(el));
+</script>
+</body>
+</html>
